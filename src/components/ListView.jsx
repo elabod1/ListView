@@ -1,28 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 
-const ListView = () => {
-  const [users, setUsers] = useState([]);
-  const [errors, setErrors] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const getUsers = async () => {
-    setLoading(true);
-    setErrors(""); 
-    try {
-      const response = await axios.get("https://dummyjson.com/products"); 
-      setUsers(response.data.products);
-    } catch (error) {
-      setErrors(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-
+const ListView = ({ users, loading, errors }) => {
   return (
     <div className="p-4">
       {loading && (
