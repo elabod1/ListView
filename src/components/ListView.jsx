@@ -53,11 +53,11 @@ const ListView = () => {
         </div>
       )}
       {!loading && !errors && users.length > 0 && (
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5">
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5">
           {users.map((user) => (
             <div
               key={user.id}
-              className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-700 dark:border-gray-700"
             >
               <a href="#">
                 <img
@@ -75,10 +75,10 @@ const ListView = () => {
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   {user.description}
                 </p>
-                <p className="text-lg font-semibold text-blue-700">
+                <p className="text-lg font-semibold text-cyan-700">
                   ${user.price}
                 </p>
-                <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded dark:bg-gray-700 dark:text-gray-300">
+                <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded dark:bg-gray-600 dark:text-gray-300">
                   {user.category}
                 </span>
               </div>
