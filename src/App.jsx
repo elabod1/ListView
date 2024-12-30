@@ -24,7 +24,10 @@ const App = () => {
     getUsers();
   }, []);
 
-  return <ListView users={users} loading={loading} errors={errors} />;
+  return(
+  <>
+  <ListView users={users} loading={loading} errors={errors} />;
+  </>) 
 };
 
 export default App;
