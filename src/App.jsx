@@ -24,9 +24,14 @@ const App = () => {
     getUsers();
   }, []);
 
+  const deleteList = (user)=>{
+    setUsers(users.filter(l=>l.id !== user))
+   
+  }
+
   return(
   <>
-  <ListView users={users} loading={loading} errors={errors} />;
+  <ListView users={users} loading={loading} errors={errors} deleteList={deleteList} />;
   </>) 
 };
 

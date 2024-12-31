@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListView = ({ users, loading, errors }) => {
+const ListView = ({ users, loading, errors, deleteList }) => {
   return (
     <div className="p-4">
       {loading && (
@@ -56,9 +56,12 @@ const ListView = ({ users, loading, errors }) => {
                 <p className="text-lg font-semibold text-cyan-700">
                   ${user.price}
                 </p>
+                <div className="flex justify-between">
                 <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded dark:bg-gray-600 dark:text-gray-300">
                   {user.category}
                 </span>
+                <button onClick={()=> deleteList(user.id)} className="px-3 py-1 text-sm font-medium bg-gray-200 text-gray-700 rounded dark:bg-red-600 dark:text-gray-300 hover:bg-red-700 " >Delete</button>
+                </div>
               </div>
             </div>
           ))}
